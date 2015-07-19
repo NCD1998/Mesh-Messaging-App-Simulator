@@ -86,7 +86,12 @@ public class WorldMap {
 		return null;
 	}
 	public Phone getRandomPhone(){
-		return phones.get(rand.nextInt(phones.size()));
+		if(!phones.isEmpty()){
+			return phones.get(rand.nextInt(phones.size()));
+		}else{
+			 addPhone("Sherman", 10, 10);
+			 return getPhoneFromName("Sherman");
+		}
 	}
 	public boolean isPhoneHere(int x, int y){
 		for(Phone current: phones){

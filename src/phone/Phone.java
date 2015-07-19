@@ -37,6 +37,8 @@ public class Phone {
 	private List<Connection> connections = new ArrayList();
 		//Is Phones text currently being read by Simulation?
 	private boolean showText = Reference.DEFAULTVIEW;
+	//The persons personality
+	private final Personality personality;
 	//Public Variables
 	
 	//pos Params Constructer
@@ -45,6 +47,7 @@ public class Phone {
 		PUBLICUUID = UUID.randomUUID();
 		PRIVATEUUID = UUID.randomUUID();
 		mode = TransModes.PUBLIC;
+		personality = new Personality();
 		this.setLocation(x, y);
 	}
 	//Name Params
@@ -53,6 +56,7 @@ public class Phone {
 		PUBLICUUID = UUID.randomUUID();
 		PRIVATEUUID = UUID.randomUUID();
 		mode = TransModes.PUBLIC;
+		personality = new Personality();
 		name= Pname;
 		this.setLocation(x, y);
 	}
@@ -137,6 +141,10 @@ public class Phone {
 	}
 	public void sendGlobalChat(String message){
 		Message mess = new Message(name, PUBLICUUID, mode, connections, message, null);
+	}
+	public Personality getPersonality(){
+		return personality;
+		
 	}
 	//Private methods
 	//Checks if a UUID is stored in recievedUUID

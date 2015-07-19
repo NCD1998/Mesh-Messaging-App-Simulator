@@ -48,7 +48,7 @@ public class MeshSimMain {
 		}
 		world.drawWorld();
 		while(true){
-			Thread.sleep(5000 + rand.nextInt(5000));
+			Thread.sleep(1000 + rand.nextInt(1000));
 			int donext = rand.nextInt(100);
 			if(donext < 70){
 				String sentence = nrand.nextString(1 + rand.nextInt(1 + rand.nextInt(1 + rand.nextInt(30))));
